@@ -1,20 +1,7 @@
-# React TypeScript Tooling Automation Template
+# Cognito React TypeScript Authentication
 
-![Continuous Integration](https://github.com/louis-young/react-typescript-tooling-automation-template/actions/workflows/ci.yml/badge.svg)
-![Continuous Deployment](https://github.com/louis-young/react-typescript-tooling-automation-template/actions/workflows/cd.yml/badge.svg)
-
-A React template with TypeScript and developer tooling.
-
-- React with TypeScript with strong typing via static code analysis to improve developer experience and shorten feedback loops.
-- Tailwind to increase styling velocity and manage CSS at scale.
-- Unit and integration tests with coverage reports and configurable thresholds via Jest to help prevent regressions and increase confidence, with React Testing Library to help prevent testing implementation details.
-- Linting for JavaScript and TypeScript files via ESLint to find and fix problems quickly via static code analysis, with configurable rules.
-- Linting for the filesystem via LSLint to enforce consistency in file and folder names, with configurable rules.
-- Opinionated formatting for an array of file types via Prettier to enforce consistency in code style, with configurable rules.
-- Pre-commit hooks via Husky to automatically enforce standards and shorten feedback loops, with configurable steps.
-- Automated dependency updates via Dependabot to keep dependencies secure and up to date, with configurable rules.
-- Continuous Integration via GitHub actions with type checking, formatting, linting, testing and more, with configurable steps.
-- Continuous Deployment via GitHub actions to Amazon S3, in my instance to an S3 bucket behind a CloudFront distribution through Route 53.
+![Continuous Integration](https://github.com/louis-young/cognito-react-typescript-authentication/actions/workflows/ci.yml/badge.svg)
+![Continuous Deployment](https://github.com/louis-young/cognito-react-typescript-authentication/actions/workflows/cd.yml/badge.svg)
 
 ---
 
