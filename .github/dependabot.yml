@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "07:00"
+      timezone: "GB"
+    target-branch: "feature/dependency_updates"
+    open-pull-requests-limit: 20
+    reviewers:
+      - "louis-young"

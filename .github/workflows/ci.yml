@@ -1,0 +1,29 @@
+name: Continuous Integration
+
+on:
+  push:
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure Environment Variables
+        run: |
+          cat .env.production >> $GITHUB_ENV
+
+      - name: Continuous Integration
+        run: |
+          npm ci
+          npm run format
+          npm run typecheck
+          npm run lint
+          npm run lint:ls
+          npm run test
+          npm run build:production

@@ -1,0 +1,79 @@
+{
+  "name": "react-typescript-tooling-automation-template",
+  "description": "A React template with TypeScript, developer tooling and automation.",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "start": "react-scripts start",
+    "typecheck": "tsc",
+    "lint": "eslint \"./**/*.{js,jsx,ts,tsx}\"",
+    "lint:write": "npm run lint -- --fix",
+    "lint:ls": "ls-lint",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll",
+    "format": "prettier --check \"./**/*.{js,jsx,ts,tsx,html,json,md}\"",
+    "format:write": "prettier --write \"./**/*.{js,jsx,ts,tsx,html,json,md}\"",
+    "build:development": "NODE_ENV=development react-scripts build",
+    "build:production": "NODE_ENV=production react-scripts build",
+    "prepare": "husky install",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "./src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  },
+  "dependencies": {
+    "@aws-amplify/auth": "^4.5.9",
+    "aws-amplify": "^4.3.27",
+    "classnames": "^2.3.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.3.0",
+    "react-query": "^3.39.1",
+    "react-router-dom": "^6.3.0",
+    "react-spinners": "^0.13.3",
+    "rooks": "^5.11.8",
+    "tiny-invariant": "^1.2.0"
+  },
+  "devDependencies": {
+    "@ls-lint/ls-lint": "^1.11.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.5",
+    "@types/jest": "^28.1.5",
+    "@types/node": "^16.11.7",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "react-scripts": "^5.0.1",
+    "tailwindcss": "^3.1.6",
+    "typescript": "^4.7.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

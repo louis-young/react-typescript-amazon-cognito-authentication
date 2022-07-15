@@ -1,0 +1,14 @@
+ls:
+  .js: kebab-case
+  .jsx: kebab-case
+  .test.jsx: snake_case
+  .ts: kebab-case | camelCase
+  .tsx: kebab-case
+  .test.tsx: snake_case
+  .config.js: kebab-case
+  .d.ts: kebab-case
+  .json: kebab-case
+  .md: kebab-case
+ignore:
+  - node_modules
+  - build
