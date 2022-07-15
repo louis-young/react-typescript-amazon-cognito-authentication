@@ -28,7 +28,7 @@ export const ThemeContextProvider = ({
   return (
     <ThemeContext.Provider value={value}>
       <div className={theme === "dark" ? "dark" : ""}>
-        <div className="text-zinc-900 dark:text-white transition-all">
+        <div className="text-zinc-900 transition-all dark:text-white">
           {children}
         </div>
       </div>

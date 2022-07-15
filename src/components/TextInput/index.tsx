@@ -22,7 +22,7 @@ export const TextInput = ({
       disabled={isDisabled}
       required={isRequired}
       autoFocus={hasAutoFocus}
-      className="block w-full border border-light p-3 rounded-md disabled:opacity-75 bg-lighter dark:bg-darker dark:border-darkest"
+      className="block w-full rounded-md border border-light bg-lighter p-3 disabled:opacity-75 dark:border-darkest dark:bg-darker"
     />
   );
 };

@@ -11,7 +11,7 @@ export const ApplicationPageLayout = ({
   children,
 }: ApplicationPageLayoutProps) => {
   return (
-    <section className="p-12 max-h-screen overflow-y-scroll">
+    <section className="max-h-screen overflow-y-scroll p-12">
       <header>
         <Title>{pageTitle}</Title>
       </header>

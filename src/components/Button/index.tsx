@@ -13,7 +13,7 @@ export const Button = ({
       type={type}
       onClick={onClick}
       disabled={isDisabled || isLoading}
-      className="py-3 px-10 min-w-[10rem] min-h-[3rem] flex justify-center items-center bg-blue-600 text-white font-medium rounded hover:opacity-90 disabled:opacity-75 disabled:cursor-not-allowed"
+      className="flex min-h-[3rem] min-w-[10rem] items-center justify-center rounded bg-blue-600 py-3 px-10 font-medium text-white hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-75"
     >
       {isLoading ? <PuffLoader size="2rem" color="white" /> : children}
     </button>

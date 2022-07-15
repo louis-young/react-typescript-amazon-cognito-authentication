@@ -18,7 +18,7 @@ export const AuthenticatedApplication = () => {
 
   return (
     <div>
-      <section className="grid grid-cols-[200px_1fr] sm:grid-cols-[275px_1fr] h-screen">
+      <section className="grid h-screen grid-cols-[200px_1fr] sm:grid-cols-[275px_1fr]">
         <div>
           <Sidebar />
         </div>

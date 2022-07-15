@@ -35,7 +35,7 @@ export const Sidebar = () => {
   };
 
   return (
-    <aside className="p-6 h-full flex flex-col justify-between bg-lightest dark:bg-dark">
+    <aside className="flex h-full flex-col justify-between bg-lightest p-6 dark:bg-dark">
       <div>
         <div className="py-6">
           <Logo />

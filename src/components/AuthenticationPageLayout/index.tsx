@@ -5,12 +5,12 @@ export const AuthenticationPageLayout = ({
   children,
 }: AuthenticationPageLayoutProps) => {
   return (
-    <section className="min-h-screen max-h-screen overflow-y-scroll md:grid md:grid-cols-2 md:items-center md:justify-center bg-lightest dark:bg-dark">
-      <article className="p-6 sm:p-12 w-full max-w-lg m-auto">
+    <section className="max-h-screen min-h-screen overflow-y-scroll bg-lightest dark:bg-dark md:grid md:grid-cols-2 md:items-center md:justify-center">
+      <article className="m-auto w-full max-w-lg p-6 sm:p-12">
         {children}
       </article>
 
-      <figure className="h-full w-full hidden md:block">
+      <figure className="hidden h-full w-full md:block">
         <img
           src={blur}
           alt={process.env.REACT_APP_APPLICATION_NAME}

@@ -31,7 +31,7 @@ export const UserMenu = ({
       <button
         onClick={handleToggleButtonClick}
         className={classNames({
-          "flex items-center justify-between gap-3 w-full p-2 rounded-lg bg-lighter hover:bg-light dark:bg-darker dark:hover:bg-darkest":
+          "flex w-full items-center justify-between gap-3 rounded-lg bg-lighter p-2 hover:bg-light dark:bg-darker dark:hover:bg-darkest":
             true,
           "opacity-80": isOpen,
         })}
@@ -46,7 +46,7 @@ export const UserMenu = ({
       </button>
 
       {isOpen && (
-        <div className="absolute w-full bottom-full left-0 mb-2 rounded-lg bg-lightest dark:bg-darker border-light border dark:border-darkest">
+        <div className="absolute bottom-full left-0 mb-2 w-full rounded-lg border border-light bg-lightest dark:border-darkest dark:bg-darker">
           <div className="p-4">
             <UserDetails
               imageSource={imageSource}
@@ -62,7 +62,7 @@ export const UserMenu = ({
               to={pagePaths.profile}
               className={({ isActive }) =>
                 classNames({
-                  "flex items-center gap-2 text-sm opacity-75 p-2 rounded-md hover:bg-light dark:hover:bg-darkest":
+                  "flex items-center gap-2 rounded-md p-2 text-sm opacity-75 hover:bg-light dark:hover:bg-darkest":
                     true,
                   "bg-light": isActive,
                 })
@@ -78,7 +78,7 @@ export const UserMenu = ({
               to={pagePaths.settings}
               className={({ isActive }) =>
                 classNames({
-                  "flex items-center gap-2 text-sm opacity-75 p-2 rounded-md hover:bg-light dark:hover:bg-darkest":
+                  "flex items-center gap-2 rounded-md p-2 text-sm opacity-75 hover:bg-light dark:hover:bg-darkest":
                     true,
                   "bg-light": isActive,
                 })
@@ -95,7 +95,7 @@ export const UserMenu = ({
             <button
               type="button"
               onClick={onSignOutButtonClick}
-              className="flex items-center gap-2 text-sm opacity-75 w-full text-left p-2 rounded-md hover:bg-light dark:hover:bg-darkest"
+              className="flex w-full items-center gap-2 rounded-md p-2 text-left text-sm opacity-75 hover:bg-light dark:hover:bg-darkest"
             >
               {icons.signOut} Sign Out
             </button>
