@@ -1,5 +1,5 @@
 {
-  "name": "cognito-react-typescript-authentication",
+  "name": "react-typescript-amazon-cognito-authentication",
   "description": "A React and TypeScript application with Amazon Cognito authentication.",
   "version": "1.0.0",
   "private": false,
