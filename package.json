@@ -1,6 +1,6 @@
 {
-  "name": "react-typescript-tooling-automation-template",
-  "description": "A React template with TypeScript, developer tooling and automation.",
+  "name": "cognito-react-typescript-authentication",
+  "description": "A React and TypeScript application with Amazon Cognito authentication.",
   "version": "1.0.0",
   "private": false,
   "scripts": {
