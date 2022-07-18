@@ -1,5 +1,4 @@
 import type { FormEvent } from "react";
-import { useState } from "react";
 import { LabelledTextInput } from "../LabelledTextInput";
 import { Spacer } from "../Spacer";
 import { Button } from "../Button";
@@ -7,14 +6,14 @@ import { ErrorMessage } from "../ErrorMessage";
 import type { SendPasswordResetEmailFormProps } from "./types";
 
 export const ResetPasswordForm = ({
+  emailAddress,
+  onEmailAddressChange,
   onSubmit,
   isSubmitting,
   errorMessage,
 }: SendPasswordResetEmailFormProps) => {
-  const [emailAddress, setEmailAddress] = useState("");
-
   const handleEmailAddressChange = (newEmailAddress: string) => {
-    setEmailAddress(newEmailAddress);
+    onEmailAddressChange(newEmailAddress);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {

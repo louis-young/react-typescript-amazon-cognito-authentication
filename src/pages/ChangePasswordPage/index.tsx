@@ -72,7 +72,10 @@ export const ChangePasswordPage = () => {
 
       <p>
         Remembered your password?{" "}
-        <Hyperlink link={buildSignInPageUrl()}>Sign in</Hyperlink>.
+        <Hyperlink link={buildSignInPageUrl({ emailAddress })}>
+          Sign in
+        </Hyperlink>
+        .
       </p>
 
       <Spacer size="large" />

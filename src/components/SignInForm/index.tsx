@@ -1,5 +1,4 @@
 import type { FormEvent } from "react";
-import { useState } from "react";
 import { LabelledTextInput } from "../LabelledTextInput";
 import { Spacer } from "../Spacer";
 import { Button } from "../Button";
@@ -7,20 +6,20 @@ import { ErrorMessage } from "../ErrorMessage";
 import type { SignInFormProps } from "./types";
 
 export const SignInForm = ({
+  emailAddress,
+  onEmailAddressChange,
+  password,
+  onPasswordChange,
   onSubmit,
   isSubmitting,
   errorMessage,
 }: SignInFormProps) => {
-  const [emailAddress, setEmailAddress] = useState("");
-
-  const [password, setPassword] = useState("");
-
   const handleEmailAddressChange = (newEmailAddress: string) => {
-    setEmailAddress(newEmailAddress);
+    onEmailAddressChange(newEmailAddress);
   };
 
   const handlePasswordChange = (newPassword: string) => {
-    setPassword(newPassword);
+    onPasswordChange(newPassword);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {

@@ -5,7 +5,17 @@ export const buildEntireUrl = (endpoint: string) => {
   return `${process.env.REACT_APP_API_BASE_URL}${endpoint}`;
 };
 
-export const buildSignUpPageUrl = () => {
+export const buildSignUpPageUrl = ({
+  emailAddress,
+}: {
+  emailAddress?: string;
+} = {}) => {
+  if (emailAddress) {
+    const searchParameters = createSearchParams({ emailAddress });
+
+    return `${pagePaths.signUp}/?${searchParameters}`;
+  }
+
   return pagePaths.signUp;
 };
 
@@ -33,7 +43,17 @@ export const buildSignInPageUrl = ({
   return pagePaths.signIn;
 };
 
-export const buildResetPasswordPageUrl = () => {
+export const buildResetPasswordPageUrl = ({
+  emailAddress,
+}: {
+  emailAddress?: string;
+}) => {
+  if (emailAddress) {
+    const searchParameters = createSearchParams({ emailAddress });
+
+    return `${pagePaths.resetPassword}/?${searchParameters}`;
+  }
+
   return pagePaths.resetPassword;
 };
 

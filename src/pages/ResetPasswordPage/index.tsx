@@ -1,6 +1,7 @@
 import { useMutation } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useState } from "react";
 import { ResetPasswordForm } from "../../components/ResetPasswordForm";
 import { authenticationService } from "../../services/authentication";
 import { Spacer } from "../../components/Spacer";
@@ -17,6 +18,12 @@ import {
 export const ResetPasswordPage = () => {
   const navigate = useNavigate();
 
+  const [searchParameters] = useSearchParams();
+
+  const initialEmailAddress = searchParameters.get("emailAddress");
+
+  const [emailAddress, setEmailAddress] = useState(initialEmailAddress ?? "");
+
   const {
     mutate: sendPasswordResetEmail,
     isLoading: isSendingPasswordResetEmail,
@@ -25,6 +32,10 @@ export const ResetPasswordPage = () => {
     ({ emailAddress }: SendPasswordResetEmailParameters) =>
       authenticationService.sendPasswordResetEmail({ emailAddress }),
   );
+
+  const handleEmailAddressChange = (newEmailAddress: string) => {
+    setEmailAddress(newEmailAddress);
+  };
 
   const handleResetPasswordFormSubmit = ({
     emailAddress,
@@ -59,12 +70,17 @@ export const ResetPasswordPage = () => {
 
       <p>
         Remembered your password?{" "}
-        <Hyperlink link={buildSignInPageUrl()}>Sign in</Hyperlink>.
+        <Hyperlink link={buildSignInPageUrl({ emailAddress })}>
+          Sign in
+        </Hyperlink>
+        .
       </p>
 
       <Spacer size="large" />
 
       <ResetPasswordForm
+        emailAddress={emailAddress}
+        onEmailAddressChange={handleEmailAddressChange}
         onSubmit={handleResetPasswordFormSubmit}
         isSubmitting={isSendingPasswordResetEmail}
         errorMessage={sendPasswordResetEmailError?.message}

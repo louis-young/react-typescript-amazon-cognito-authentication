@@ -1,6 +1,7 @@
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { useMutation } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { AuthenticationPageLayout } from "../../components/AuthenticationPageLayout";
 import { Hyperlink } from "../../components/Hyperlink";
 import { Logo } from "../../components/Logo";
@@ -25,6 +26,14 @@ export const SignInPage = () => {
 
   const { setUser } = useAuthenticationContext();
 
+  const [searchParameters] = useSearchParams();
+
+  const initialEmailAddress = searchParameters.get("emailAddress");
+
+  const [emailAddress, setEmailAddress] = useState(initialEmailAddress ?? "");
+
+  const [password, setPassword] = useState("");
+
   const {
     mutate: signIn,
     isLoading: isSigningIn,
@@ -36,6 +45,14 @@ export const SignInPage = () => {
         password,
       }),
   );
+
+  const handleEmailAddressChange = (newEmailAddress: string) => {
+    setEmailAddress(newEmailAddress);
+  };
+
+  const handlePasswordChange = (newPassword: string) => {
+    setPassword(newPassword);
+  };
 
   const handleSignInFormSubmit = ({
     emailAddress,
@@ -83,20 +100,29 @@ export const SignInPage = () => {
 
       <p>
         Don't have an account?{" "}
-        <Hyperlink link={buildSignUpPageUrl()}>Sign up</Hyperlink>.
+        <Hyperlink link={buildSignUpPageUrl({ emailAddress })}>
+          Sign up
+        </Hyperlink>
+        .
       </p>
 
       <Spacer size="small" />
 
       <p>
         Forgotten your password?{" "}
-        <Hyperlink link={buildResetPasswordPageUrl()}>Reset password</Hyperlink>
+        <Hyperlink link={buildResetPasswordPageUrl({ emailAddress })}>
+          Reset password
+        </Hyperlink>
         .
       </p>
 
       <Spacer size="large" />
 
       <SignInForm
+        emailAddress={emailAddress}
+        onEmailAddressChange={handleEmailAddressChange}
+        password={password}
+        onPasswordChange={handlePasswordChange}
         onSubmit={handleSignInFormSubmit}
         isSubmitting={isSigningIn}
         errorMessage={signInError?.message}
