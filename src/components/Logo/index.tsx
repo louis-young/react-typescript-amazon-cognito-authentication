@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { pagePaths } from "../../constants/pagePaths";
 import logo from "../../assets/images/logo.png";
+import { buildDashboardPageUrl } from "../../utilities/url";
 
 export const Logo = () => {
   return (
-    <Link to={pagePaths.dashboard} className="block w-fit">
+    <Link to={buildDashboardPageUrl()} className="block w-fit">
       <img
         src={logo}
         alt={process.env.REACT_APP_APPLICATION_NAME}

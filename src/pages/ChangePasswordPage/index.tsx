@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useSearchParams } from "react-router-dom";
 import { ChangePasswordForm } from "../../components/ChangePasswordForm";
-import { pagePaths } from "../../constants/pagePaths";
 import { authenticationService } from "../../services/authentication";
 import { Spacer } from "../../components/Spacer";
 import { AuthenticationPageLayout } from "../../components/AuthenticationPageLayout";
@@ -11,6 +10,7 @@ import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
 import { Hyperlink } from "../../components/Hyperlink";
 import type { ChangePasswordParameters } from "../../services/authentication/types";
+import { buildSignInPageUrl } from "../../utilities/url";
 
 export const ChangePasswordPage = () => {
   const navigate = useNavigate();
@@ -50,7 +50,11 @@ export const ChangePasswordPage = () => {
         onSuccess: () => {
           toast.success("Your password has been reset.");
 
-          navigate(pagePaths.signIn);
+          const signInPageUrl = buildSignInPageUrl({
+            emailAddress,
+          });
+
+          navigate(signInPageUrl);
         },
       },
     );
@@ -68,7 +72,7 @@ export const ChangePasswordPage = () => {
 
       <p>
         Remembered your password?{" "}
-        <Hyperlink link={pagePaths.signIn}>Sign in</Hyperlink>.
+        <Hyperlink link={buildSignInPageUrl()}>Sign in</Hyperlink>.
       </p>
 
       <Spacer size="large" />

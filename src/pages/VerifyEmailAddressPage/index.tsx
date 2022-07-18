@@ -2,7 +2,6 @@ import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import { pagePaths } from "../../constants/pagePaths";
 import { authenticationService } from "../../services/authentication";
 import { VerifyEmailAddressForm } from "../../components/VerifyEmailAddressForm";
 import { Spacer } from "../../components/Spacer";
@@ -11,6 +10,7 @@ import { AuthenticationPageLayout } from "../../components/AuthenticationPageLay
 import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
 import type { VerifyEmailAddressParameters } from "../../services/authentication/types";
+import { buildSignInPageUrl } from "../../utilities/url";
 
 export const VerifyEmailAddressPage = () => {
   const navigate = useNavigate();
@@ -42,7 +42,9 @@ export const VerifyEmailAddressPage = () => {
         onSuccess: () => {
           toast.success("Your email address has been verified.");
 
-          navigate(pagePaths.signIn);
+          const signInPageUrl = buildSignInPageUrl();
+
+          navigate(signInPageUrl);
         },
       },
     );
@@ -60,7 +62,7 @@ export const VerifyEmailAddressPage = () => {
 
       <p>
         Already have an account?{" "}
-        <Hyperlink link={pagePaths.signIn}>Sign in</Hyperlink>.
+        <Hyperlink link={buildSignInPageUrl()}>Sign in</Hyperlink>.
       </p>
 
       <Spacer size="large" />

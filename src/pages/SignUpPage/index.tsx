@@ -3,13 +3,16 @@ import { useMutation } from "react-query";
 import toast from "react-hot-toast";
 import { SignUpForm } from "../../components/SignUpForm";
 import { authenticationService } from "../../services/authentication";
-import { pagePaths } from "../../constants/pagePaths";
 import type { SignUpParameters } from "../../services/authentication/types";
 import { Spacer } from "../../components/Spacer";
 import { AuthenticationPageLayout } from "../../components/AuthenticationPageLayout";
 import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
 import { Hyperlink } from "../../components/Hyperlink";
+import {
+  buildSignInPageUrl,
+  buildVerifyEmailAddressPageUrl,
+} from "../../utilities/url";
 
 export const SignUpPage = () => {
   const navigate = useNavigate();
@@ -42,9 +45,11 @@ export const SignUpPage = () => {
             `A verification code has been sent to ${emailAddress}.`,
           );
 
-          navigate(
-            `${pagePaths.verifyEmailAddress}/?emailAddress=${emailAddress}`,
-          );
+          const verifyEmailAddressPageUrl = buildVerifyEmailAddressPageUrl({
+            emailAddress,
+          });
+
+          navigate(verifyEmailAddressPageUrl);
         },
       },
     );
@@ -62,7 +67,7 @@ export const SignUpPage = () => {
 
       <p>
         Already have an account?{" "}
-        <Hyperlink link={pagePaths.signIn}>Sign in</Hyperlink>.
+        <Hyperlink link={buildSignInPageUrl()}>Sign in</Hyperlink>.
       </p>
 
       <Spacer size="large" />

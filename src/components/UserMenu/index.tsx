@@ -2,10 +2,10 @@ import { useRef, useState } from "react";
 import classNames from "classnames";
 import { useOutsideClick } from "rooks";
 import { NavLink } from "react-router-dom";
-import { pagePaths } from "../../constants/pagePaths";
 import { icons } from "../../assets/icons";
 import { UserDetails } from "../UserDetails";
 import placeholderUser from "../../assets/images/user.png";
+import { buildProfilePageUrl, buildSettingsPageUrl } from "../../utilities/url";
 import type { UserMenuProps } from "./types";
 
 export const UserMenu = ({
@@ -59,7 +59,7 @@ export const UserMenu = ({
 
           <div className="p-2">
             <NavLink
-              to={pagePaths.profile}
+              to={buildProfilePageUrl()}
               className={({ isActive }) =>
                 classNames({
                   "flex items-center gap-2 rounded-md p-2 text-sm opacity-75 hover:bg-light dark:hover:bg-darkest":
@@ -75,7 +75,7 @@ export const UserMenu = ({
 
           <div className="p-2 pt-0">
             <NavLink
-              to={pagePaths.settings}
+              to={buildSettingsPageUrl()}
               className={({ isActive }) =>
                 classNames({
                   "flex items-center gap-2 rounded-md p-2 text-sm opacity-75 hover:bg-light dark:hover:bg-darkest":

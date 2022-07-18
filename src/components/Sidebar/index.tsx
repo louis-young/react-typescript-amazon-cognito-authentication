@@ -5,19 +5,23 @@ import { Navigation } from "../Navigation";
 import { UserMenu } from "../UserMenu";
 import { Logo } from "../Logo";
 import { Spacer } from "../Spacer";
-import { pagePaths } from "../../constants/pagePaths";
 import { icons } from "../../assets/icons";
+import {
+  buildDashboardPageUrl,
+  buildSignInPageUrl,
+  buildTestPageUrl,
+} from "../../utilities/url";
 
 const navigationLinks = [
   {
     label: "Dashboard",
-    link: pagePaths.dashboard,
     icon: icons.dashboard,
+    link: buildDashboardPageUrl(),
   },
   {
     label: "Test",
-    link: pagePaths.test,
     icon: icons.lineGraph,
+    link: buildTestPageUrl(),
   },
 ];
 
@@ -31,7 +35,9 @@ export const Sidebar = () => {
 
     setUser(undefined);
 
-    navigate(pagePaths.signIn);
+    const signInPageUrl = buildSignInPageUrl();
+
+    navigate(signInPageUrl);
   };
 
   return (

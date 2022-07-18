@@ -7,13 +7,18 @@ import { Logo } from "../../components/Logo";
 import { SignInForm } from "../../components/SignInForm";
 import { Spacer } from "../../components/Spacer";
 import { Title } from "../../components/Title";
-import { pagePaths } from "../../constants/pagePaths";
 import { useAuthenticationContext } from "../../hooks/context/useAuthenticationContext";
 import { authenticationService } from "../../services/authentication";
 import type {
   CustomCognitoUser,
   SignInParameters,
 } from "../../services/authentication/types";
+import {
+  buildDashboardPageUrl,
+  buildResetPasswordPageUrl,
+  buildSignUpPageUrl,
+  buildVerifyEmailAddressPageUrl,
+} from "../../utilities/url";
 
 export const SignInPage = () => {
   const navigate = useNavigate();
@@ -42,7 +47,9 @@ export const SignInPage = () => {
         onSuccess: (user) => {
           setUser(user);
 
-          navigate(pagePaths.dashboard);
+          const dashboardPageUrl = buildDashboardPageUrl();
+
+          navigate(dashboardPageUrl);
         },
         onError: (error) => {
           const isUserNotConfirmedException =
@@ -53,9 +60,11 @@ export const SignInPage = () => {
               `A verification code has been sent to ${emailAddress}.`,
             );
 
-            navigate(
-              `${pagePaths.verifyEmailAddress}/?emailAddress=${emailAddress}`,
-            );
+            const verifyEmailAddressPageUrl = buildVerifyEmailAddressPageUrl({
+              emailAddress,
+            });
+
+            navigate(verifyEmailAddressPageUrl);
           }
         },
       },
@@ -74,14 +83,15 @@ export const SignInPage = () => {
 
       <p>
         Don't have an account?{" "}
-        <Hyperlink link={pagePaths.signUp}>Sign up</Hyperlink>.
+        <Hyperlink link={buildSignUpPageUrl()}>Sign up</Hyperlink>.
       </p>
 
       <Spacer size="small" />
 
       <p>
         Forgotten your password?{" "}
-        <Hyperlink link={pagePaths.resetPassword}>Reset password</Hyperlink>.
+        <Hyperlink link={buildResetPasswordPageUrl()}>Reset password</Hyperlink>
+        .
       </p>
 
       <Spacer size="large" />
