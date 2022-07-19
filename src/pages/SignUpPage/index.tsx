@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
 import toast from "react-hot-toast";
+import { useState } from "react";
 import { SignUpForm } from "../../components/SignUpForm";
 import { authenticationService } from "../../services/authentication";
 import type { SignUpParameters } from "../../services/authentication/types";
@@ -17,6 +18,11 @@ import {
 export const SignUpPage = () => {
   const navigate = useNavigate();
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
+
   const {
     mutate: signUp,
     isLoading: isSigningUp,
@@ -30,6 +36,22 @@ export const SignUpPage = () => {
         password,
       }),
   );
+
+  const handleFirstNameChange = (newFirstName: string) => {
+    setFirstName(newFirstName);
+  };
+
+  const handleLastNameChange = (newLastName: string) => {
+    setLastName(newLastName);
+  };
+
+  const handleEmailAddressChange = (newEmailAddress: string) => {
+    setEmailAddress(newEmailAddress);
+  };
+
+  const handlePasswordChange = (newPassword: string) => {
+    setPassword(newPassword);
+  };
 
   const handleSignUpFormSubmit = ({
     firstName,
@@ -73,6 +95,14 @@ export const SignUpPage = () => {
       <Spacer size="large" />
 
       <SignUpForm
+        firstName={firstName}
+        onFirstNameChange={handleFirstNameChange}
+        lastName={lastName}
+        onLastNameChange={handleLastNameChange}
+        emailAddress={emailAddress}
+        onEmailAddressChange={handleEmailAddressChange}
+        password={password}
+        onPasswordChange={handlePasswordChange}
         onSubmit={handleSignUpFormSubmit}
         isSubmitting={isSigningUp}
         errorMessage={signUpError?.message}
