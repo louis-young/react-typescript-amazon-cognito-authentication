@@ -10,16 +10,16 @@ import { buildEntireUrl } from "../../utilities/url";
 export const TestPage = () => {
   const { getJwtToken } = useAuthenticationContext();
 
-  const endpoint = "/events";
+  const endpoint = "/event-performances/22/DT2K";
 
   const url = buildEntireUrl(endpoint);
 
   const queryKey = getTestQueryKey();
 
   const {
-    data: eventNamesData,
-    isLoading: isLoadingEventNames,
-    isError: hasEventNamesError,
+    data: eventPerformancesData,
+    isLoading: isLoadingEventPerformances,
+    isError: hasEventPerformancesError,
   } = useQuery<TestResponse, Error>(queryKey, async () => {
     const jwtToken = await getJwtToken();
 
@@ -29,12 +29,12 @@ export const TestPage = () => {
   return (
     <ApplicationPageLayout
       pageTitle="Test"
-      isPageLoading={isLoadingEventNames}
-      hasPageError={hasEventNamesError}
+      isPageLoading={isLoadingEventPerformances}
+      hasPageError={hasEventPerformancesError}
     >
-      {eventNamesData && (
+      {eventPerformancesData && (
         <Card>
-          <pre>{JSON.stringify(eventNamesData.eventNames, null, 2)}</pre>
+          <pre>{JSON.stringify(eventPerformancesData, null, 2)}</pre>
         </Card>
       )}
     </ApplicationPageLayout>
