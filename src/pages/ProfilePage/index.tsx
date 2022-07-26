@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import invariant from "tiny-invariant";
 import { ApplicationPageLayout } from "../../components/ApplicationPageLayout";
 import { Card } from "../../components/Card";

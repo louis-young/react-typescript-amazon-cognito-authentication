@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { authenticationService } from "../../services/authentication";
 import type { CustomCognitoUser } from "../../services/authentication/types";
 import type {
@@ -18,7 +18,7 @@ export const AuthenticationContextProvider = ({
 
   const { isLoading: isDeterminingAuthenticationStatus } =
     useQuery<CustomCognitoUser>(
-      "getAuthenticatedUser",
+      ["getAuthenticatedUser"],
       () => authenticationService.getAuthenticatedUser(),
       {
         retry: false,
