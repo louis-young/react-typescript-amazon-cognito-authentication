@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { AuthenticationPageLayout } from "../../components/AuthenticationPageLayout";
 import { Hyperlink } from "../../components/Hyperlink";

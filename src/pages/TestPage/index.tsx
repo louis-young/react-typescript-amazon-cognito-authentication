@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { ApplicationPageLayout } from "../../components/ApplicationPageLayout";
 import { Card } from "../../components/Card";
 import { useAuthenticationContext } from "../../hooks/context/useAuthenticationContext";
