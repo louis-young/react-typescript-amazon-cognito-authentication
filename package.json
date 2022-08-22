@@ -39,7 +39,7 @@
     "react-hot-toast": "^2.3.0",
     "react-router-dom": "^6.3.0",
     "react-spinners": "^0.13.3",
-    "rooks": "^5.14.0",
+    "rooks": "^6.4.3",
     "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
