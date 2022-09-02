@@ -148,7 +148,7 @@ describe("<RadioGroup />", () => {
 
       console.error = jest.fn();
 
-      expect(() => render(<Radio value={firstValue} />)).toThrowError(
+      expect(() => render(<Radio value={firstValue} />)).toThrow(
         "`Radio` must be used within a `RadioGroup`.",
       );
 
