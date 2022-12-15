@@ -32,7 +32,7 @@
   "dependencies": {
     "@aws-amplify/auth": "^5.0.5",
     "@tanstack/react-query": "^4.20.4",
-    "aws-amplify": "^4.3.34",
+    "aws-amplify": "^5.0.6",
     "classnames": "^2.3.2",
     "react": "^18.0.0",
     "react-dom": "^18.2.0",
