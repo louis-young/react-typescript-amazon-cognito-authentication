@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import Amplify from "aws-amplify";
+import { Amplify } from "@aws-amplify/core";
 import { Providers } from "./components/Providers";
 import "./index.css";
 import { Application } from "./components/Application";
