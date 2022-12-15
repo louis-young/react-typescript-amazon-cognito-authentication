@@ -1,6 +1,6 @@
 {
-  "name": "react-typescript-tooling-automation-template-vite",
-  "description": "A React template with TypeScript, developer tooling and automation.",
+  "name": "react-typescript-amazon-cognito-authentication",
+  "description": "A React and TypeScript application with Amazon Cognito authentication.",
   "version": "1.0.0",
   "private": false,
   "scripts": {
@@ -58,8 +58,5 @@
     "vite-plugin-checker": "^0.5.2",
     "vitest": "^0.25.8",
     "whatwg-fetch": "^3.6.2"
-  },
-  "msw": {
-    "workerDirectory": "public"
   }
 }

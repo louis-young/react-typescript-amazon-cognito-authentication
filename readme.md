@@ -1,9 +1,7 @@
-# React TypeScript Tooling Automation Template
+# Cognito React TypeScript Authentication
 
-![Continuous Integration](https://github.com/louis-young/react-typescript-tooling-automation-template-vite/actions/workflows/ci.yml/badge.svg)
-![Continuous Deployment](https://github.com/louis-young/react-typescript-tooling-automation-template-vite/actions/workflows/cd.yml/badge.svg)
-
-A React template with TypeScript and developer tooling.
+![Continuous Integration](https://github.com/louis-young/cognito-react-typescript-authentication/actions/workflows/ci.yml/badge.svg)
+![Continuous Deployment](https://github.com/louis-young/cognito-react-typescript-authentication/actions/workflows/cd.yml/badge.svg)
 
 - React with TypeScript to improve developer experience, shorten feedback loops and to help prevent runtime errors.
 - Tailwind to style elements quickly and efficiently.
@@ -17,7 +15,7 @@ A React template with TypeScript and developer tooling.
 
 ## Scripts
 
-`npm run dev`
+`npm run start`
 
 Runs the application in the development mode.
 
