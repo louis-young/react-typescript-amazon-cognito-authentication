@@ -6,7 +6,7 @@ import { RadioGroup } from "../../RadioGroup";
 describe("<RadioGroup />", () => {
   const defaultName = "fruit";
   const defaultSelectedValue = "apple";
-  const defaultOnSelectedValueChange = jest.fn();
+  const defaultOnSelectedValueChange = vi.fn();
 
   const firstLabel = "Apple";
   const firstValue = "apple";
@@ -70,7 +70,7 @@ describe("<RadioGroup />", () => {
     it("calls `onSelectedValueChange` with the new value when clicking an unchecked radio input", async () => {
       const selectedValue = firstValue;
 
-      const onSelectedValueChange = jest.fn();
+      const onSelectedValueChange = vi.fn();
 
       render(
         <RadioGroup
@@ -97,7 +97,7 @@ describe("<RadioGroup />", () => {
     it("does not call `onSelectedValueChange` when clicking the checked radio input", async () => {
       const selectedValue = firstValue;
 
-      const onSelectedValueChange = jest.fn();
+      const onSelectedValueChange = vi.fn();
 
       render(
         <RadioGroup
@@ -146,7 +146,7 @@ describe("<RadioGroup />", () => {
     it("throws an error when used outside of a `RadioGroup`", () => {
       const consoleError = console.error;
 
-      console.error = jest.fn();
+      console.error = vi.fn();
 
       expect(() => render(<Radio value={firstValue} />)).toThrow(
         "`Radio` must be used within a `RadioGroup`.",

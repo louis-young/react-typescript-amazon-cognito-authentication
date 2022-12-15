@@ -43,7 +43,6 @@ export const VerifyEmailAddressForm = ({
           onValueChange={handleVerificationCodeChange}
           isDisabled={isSubmitting}
           isRequired
-          hasAutoFocus
         />
 
         <Spacer />

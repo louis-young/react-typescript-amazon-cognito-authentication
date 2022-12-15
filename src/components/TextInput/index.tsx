@@ -9,7 +9,6 @@ export const TextInput = ({
   onValueChange,
   isDisabled = false,
   isRequired = false,
-  hasAutoFocus = false,
 }: TextInputProps) => {
   return (
     <input
@@ -21,7 +20,6 @@ export const TextInput = ({
       onChange={(event) => onValueChange(event.target.value)}
       disabled={isDisabled}
       required={isRequired}
-      autoFocus={hasAutoFocus}
       className="block w-full rounded-md border border-light bg-lighter p-3 disabled:opacity-75 dark:border-darkest dark:bg-darker"
     />
   );

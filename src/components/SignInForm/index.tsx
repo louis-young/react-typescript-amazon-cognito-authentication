@@ -48,7 +48,6 @@ export const SignInForm = ({
           onValueChange={handleEmailAddressChange}
           isDisabled={isSubmitting}
           isRequired
-          hasAutoFocus
         />
 
         <Spacer size="small" />

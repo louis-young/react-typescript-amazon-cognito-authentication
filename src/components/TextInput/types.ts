@@ -9,5 +9,4 @@ export interface TextInputProps {
   onValueChange: (newValue: string) => void;
   isDisabled?: boolean;
   isRequired?: boolean;
-  hasAutoFocus?: boolean;
 }

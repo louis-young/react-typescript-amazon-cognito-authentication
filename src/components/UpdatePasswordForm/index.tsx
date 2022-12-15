@@ -49,7 +49,6 @@ export const UpdatePasswordForm = ({
           onValueChange={handleCurrentPasswordChange}
           isDisabled={isSubmitting}
           isRequired
-          hasAutoFocus
         />
 
         <Spacer size="small" />

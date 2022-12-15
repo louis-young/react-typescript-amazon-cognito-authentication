@@ -12,7 +12,6 @@ export const LabelledTextInput = ({
   onValueChange,
   isDisabled = false,
   isRequired = false,
-  hasAutoFocus = false,
 }: LabelledTextInputProps) => {
   return (
     <label htmlFor={id}>
@@ -29,7 +28,6 @@ export const LabelledTextInput = ({
         onValueChange={onValueChange}
         isDisabled={isDisabled}
         isRequired={isRequired}
-        hasAutoFocus={hasAutoFocus}
       />
     </label>
   );

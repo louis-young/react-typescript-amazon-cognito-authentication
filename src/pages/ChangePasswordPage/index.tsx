@@ -1,7 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useSearchParams } from "react-router-dom";
 import { ChangePasswordForm } from "../../components/ChangePasswordForm";
 import { authenticationService } from "../../services/authentication";
 import { Spacer } from "../../components/Spacer";

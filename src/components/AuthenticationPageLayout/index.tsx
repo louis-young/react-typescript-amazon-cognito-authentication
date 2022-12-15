@@ -13,7 +13,7 @@ export const AuthenticationPageLayout = ({
       <figure className="hidden h-full w-full md:block">
         <img
           src={blur}
-          alt={process.env.REACT_APP_APPLICATION_NAME}
+          alt={import.meta.env.VITE_APPLICATION_NAME}
           className="h-full w-full object-cover"
         />
       </figure>

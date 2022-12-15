@@ -4,4 +4,4 @@ npm run format
 npm run typecheck
 npm run lint
 npm run lint:ls
-npm run test -- --watchAll=false
+npm run test -- --run

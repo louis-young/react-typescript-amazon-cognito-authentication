@@ -1,33 +1,21 @@
 {
-  "name": "react-typescript-amazon-cognito-authentication",
-  "description": "A React and TypeScript application with Amazon Cognito authentication.",
+  "name": "react-typescript-tooling-automation-template-vite",
+  "description": "A React template with TypeScript, developer tooling and automation.",
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "typecheck": "tsc",
     "lint": "eslint \"./**/*.{js,jsx,ts,tsx}\"",
     "lint:write": "npm run lint -- --fix",
     "lint:ls": "ls-lint",
-    "test": "react-scripts test",
-    "test:coverage": "react-scripts test --coverage --watchAll",
     "format": "prettier --check \"./**/*.{js,jsx,ts,tsx,html,json,md}\"",
     "format:write": "prettier --write \"./**/*.{js,jsx,ts,tsx,html,json,md}\"",
-    "build:development": "NODE_ENV=development react-scripts build",
-    "build:production": "NODE_ENV=production react-scripts build",
-    "prepare": "husky install",
-    "eject": "react-scripts eject"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "./src/**/*.{js,jsx,ts,tsx}"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "lines": 100,
-        "statements": 100
-      }
-    }
+    "prepare": "husky install"
   },
   "dependencies": {
     "@aws-amplify/auth": "^5.1.0",
@@ -47,34 +35,31 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/jest": "^29.2.4",
-    "@types/node": "^16.18.8",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
+    "@typescript-eslint/parser": "^5.46.1",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jest": "^27.1.6",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
     "husky": "^8.0.2",
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13",
-    "react-scripts": "^5.0.1",
+    "ls-lint": "^0.1.2",
+    "postcss": "^8.4.20",
+    "prettier": "^2.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.1",
     "tailwindcss": "^3.2.4",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "vite": "^3.1.0",
+    "vite-plugin-checker": "^0.5.2",
+    "vitest": "^0.25.8",
+    "whatwg-fetch": "^3.6.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "msw": {
+    "workerDirectory": "public"
   }
 }

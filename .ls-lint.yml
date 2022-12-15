@@ -6,9 +6,14 @@ ls:
   .tsx: kebab-case
   .test.tsx: snake_case
   .config.js: kebab-case
+  .config.ts: kebab-case
+  .node.json: kebab-case
   .d.ts: kebab-case
   .json: kebab-case
   .md: kebab-case
+  .eslintrc.json: kebab-case
 ignore:
   - node_modules
-  - build
+  - dist
+  - coverage
+  - public

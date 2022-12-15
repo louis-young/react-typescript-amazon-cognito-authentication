@@ -49,7 +49,6 @@ export const ChangePasswordForm = ({
           onValueChange={handleVerificationCodeChange}
           isDisabled={isSubmitting}
           isRequired
-          hasAutoFocus
         />
 
         <Spacer size="small" />

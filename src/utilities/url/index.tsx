@@ -2,7 +2,7 @@ import { createSearchParams } from "react-router-dom";
 import { pagePaths } from "../../constants/pagePaths";
 
 export const buildEntireUrl = (endpoint: string) => {
-  return `${process.env.REACT_APP_API_BASE_URL}${endpoint}`;
+  return `${import.meta.env.VITE_API_BASE_URL}${endpoint}`;
 };
 
 export const buildSignUpPageUrl = ({

@@ -42,7 +42,6 @@ export const ResetPasswordForm = ({
           onValueChange={handleEmailAddressChange}
           isDisabled={isSubmitting}
           isRequired
-          hasAutoFocus
         />
 
         <Spacer />

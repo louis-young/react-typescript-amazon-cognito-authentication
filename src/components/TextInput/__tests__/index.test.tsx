@@ -6,7 +6,7 @@ describe("<TextInput />", () => {
   const defaultName = "";
   const defaultId = "";
   const defaultValue = "";
-  const defaultOnValueChange = jest.fn();
+  const defaultOnValueChange = vi.fn();
 
   it("renders the input", () => {
     render(

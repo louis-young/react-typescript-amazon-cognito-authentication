@@ -60,7 +60,6 @@ export const SignUpForm = ({
           onValueChange={handleFirstNameChange}
           isDisabled={isSubmitting}
           isRequired
-          hasAutoFocus
         />
 
         <Spacer size="small" />
