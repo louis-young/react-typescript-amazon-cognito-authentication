@@ -37,7 +37,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.4.5",
     "react-spinners": "^0.13.7",
     "rooks": "^6.4.3",
     "tiny-invariant": "^1.3.1"
