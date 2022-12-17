@@ -10,7 +10,7 @@ A React and TypeScript application with Amazon Cognito authentication.
 - Linting for JavaScript and TypeScript files via ESLint to find and fix problems quickly via static code analysis.
 - Linting for the filesystem via LSLint to enforce consistency in file and folder names.
 - Opinionated formatting for an array of file types via Prettier to enforce consistency.
-- Pre-commit hooks via Husk
+- Pre-commit hooks via Husky.
 - Automated dependency updates via Dependabot to keep dependencies up to date.
 - Continuous Integration via GitHub actions with type checking, formatting, linting and testing.
 - Continuous Deployment via GitHub actions to Amazon S3, in this example to an S3 bucket distributed by a CloudFront distribution.
