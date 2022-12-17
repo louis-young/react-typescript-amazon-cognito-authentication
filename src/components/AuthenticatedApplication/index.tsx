@@ -8,14 +8,6 @@ import { TestPage } from "../../pages/TestPage";
 import { Sidebar } from "../Sidebar";
 
 export const AuthenticatedApplication = () => {
-  // const { user } = useAuthenticationContext();
-
-  // const handleSignOutButtonClick = async () => {
-  //   await authenticationService.signOut();
-
-  //   window.location.reload(); // Specifically reload so that Amplify looks at the (now deleted) tokens again.
-  // };
-
   return (
     <div>
       <section className="grid h-screen grid-cols-[200px_1fr] sm:grid-cols-[275px_1fr]">

@@ -27,4 +27,4 @@ jobs:
           npm run build
 
       - name: Deploy Application
-        run: aws s3 sync dist/ s3://application.athleticstracker.com --delete
+        run: aws s3 sync dist/ s3://domain.tld --delete
